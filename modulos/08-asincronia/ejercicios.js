@@ -15,7 +15,8 @@ import { obtenerUsuario, obtenerPosts } from './api-falsa.js';
 // Pista: la función ya es async. Te falta un await.
 // -------------------------------------------------------------
 export async function nombreDeUsuario(id) {
-  // Escribe tu código aquí
+  const usuario = await obtenerUsuario(id);
+  return usuario.nombre;
 }
 
 // -------------------------------------------------------------
@@ -26,7 +27,12 @@ export async function nombreDeUsuario(id) {
 // Pista: try / catch
 // -------------------------------------------------------------
 export async function nombreOAnonimo(id) {
-  // Escribe tu código aquí
+  try {
+    const usuario = await obtenerUsuario(id);
+    return usuario.nombre;
+  } catch (error) {
+    return 'Anónimo';
+  }
 }
 
 // -------------------------------------------------------------
@@ -35,7 +41,8 @@ export async function nombreOAnonimo(id) {
 //   await contarPosts(3) → 3
 // -------------------------------------------------------------
 export async function contarPosts(usuarioId) {
-  // Escribe tu código aquí
+  const posts = await obtenerPosts(usuarioId);
+  return posts.length;
 }
 
 // -------------------------------------------------------------
@@ -45,7 +52,9 @@ export async function contarPosts(usuarioId) {
 // Pista: new Promise((resolve) => setTimeout(…))
 // -------------------------------------------------------------
 export function esperar(ms) {
-  // Escribe tu código aquí
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
 }
 
 // -------------------------------------------------------------
@@ -56,7 +65,9 @@ export function esperar(ms) {
 // Pista: Promise.all + map
 // -------------------------------------------------------------
 export async function nombresEnParalelo(ids) {
-  // Escribe tu código aquí
+  return Promise.all(
+    ids.map((id) => nombreDeUsuario(id))
+  );
 }
 
 // -------------------------------------------------------------
@@ -66,7 +77,15 @@ export async function nombresEnParalelo(ids) {
 // Reto: lanza las dos peticiones en paralelo.
 // -------------------------------------------------------------
 export async function resumenUsuario(id) {
-  // Escribe tu código aquí
+  const [usuario, posts] = await Promise.all([
+    obtenerUsuario(id),
+    obtenerPosts(id)
+  ]);
+
+  return {
+    nombre: usuario.nombre,
+    totalPosts: posts.length
+  };
 }
 
 // -------------------------------------------------------------
@@ -77,7 +96,9 @@ export async function resumenUsuario(id) {
 // Ojo: para que el test reciba el valor, tienes que hacer return de la cadena de .then()
 // -------------------------------------------------------------
 export function primerTitulo(usuarioId) {
-  // Escribe tu código aquí
+  return obtenerPosts(usuarioId).then((posts) => {
+    return posts[0].titulo;
+  });
 }
 
 // -------------------------------------------------------------
@@ -90,7 +111,13 @@ export function primerTitulo(usuarioId) {
 // Pista: Promise.race (busca en MDN qué hace)
 // -------------------------------------------------------------
 export function conTiempoLimite(promesa, ms) {
-  // Escribe tu código aquí
+  const limite = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject(new Error('Tiempo agotado'));
+    }, ms);
+  });
+
+  return Promise.race([promesa, limite]);
 }
 
 // =============================================================
