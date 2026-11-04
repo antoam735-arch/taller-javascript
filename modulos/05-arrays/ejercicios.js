@@ -11,7 +11,7 @@
 //   primeroYUltimo(['a'])     → ['a', 'a']
 // -------------------------------------------------------------
 export function primeroYUltimo(lista) {
-  // Escribe tu código aquí
+  return [lista[0], lista[lista.length - 1]];
 }
 
 // -------------------------------------------------------------
@@ -20,15 +20,16 @@ export function primeroYUltimo(lista) {
 //   dobles([1, 2, 3]) → [2, 4, 6]
 // -------------------------------------------------------------
 export function dobles(numeros) {
-  // Escribe tu código aquí
+  return numeros.map((numero) => numero * 2);
 }
+
 
 // -------------------------------------------------------------
 // Ejercicio 3 · Solo los pares (filter)
 //   soloPares([1, 2, 3, 4]) → [2, 4]
 // -------------------------------------------------------------
 export function soloPares(numeros) {
-  // Escribe tu código aquí
+  return numeros.filter((numero) => numero % 2 === 0);
 }
 
 // -------------------------------------------------------------
@@ -37,7 +38,7 @@ export function soloPares(numeros) {
 //   nombresEnMayusculas(['ada', 'linus']) → ['ADA', 'LINUS']
 // -------------------------------------------------------------
 export function nombresEnMayusculas(nombres) {
-  // Escribe tu código aquí
+  return nombres.map((nombre) => nombre.toUpperCase());
 }
 
 // -------------------------------------------------------------
@@ -47,7 +48,7 @@ export function nombresEnMayusculas(nombres) {
 //   primeroMayorQue([1, 2], 10)         → undefined
 // -------------------------------------------------------------
 export function primeroMayorQue(numeros, limite) {
-  // Escribe tu código aquí
+  return numeros.find((numero) => numero > limite);
 }
 
 // -------------------------------------------------------------
@@ -56,7 +57,7 @@ export function primeroMayorQue(numeros, limite) {
 //   hayNegativos([3, 1, 5])  → false
 // -------------------------------------------------------------
 export function hayNegativos(numeros) {
-  // Escribe tu código aquí
+  return numeros.some((numero) => numero < 0);
 }
 
 // -------------------------------------------------------------
@@ -65,7 +66,7 @@ export function hayNegativos(numeros) {
 //   sumarTodos([])           → 0
 // -------------------------------------------------------------
 export function sumarTodos(numeros) {
-  // Escribe tu código aquí
+  return numeros.reduce((total, numero) => total + numero, 0);
 }
 
 // -------------------------------------------------------------
@@ -76,7 +77,7 @@ export function sumarTodos(numeros) {
 // Pista: lee bien la sección "Ordenar" del README. Tiene dos trampas.
 // -------------------------------------------------------------
 export function ordenarSinTocar(numeros) {
-  // Escribe tu código aquí
+  return [...numeros].sort((a, b) => a - b);
 }
 
 // -------------------------------------------------------------
@@ -85,7 +86,7 @@ export function ordenarSinTocar(numeros) {
 //   sinDuplicados([1, 2, 2, 3, 1]) → [1, 2, 3]
 // -------------------------------------------------------------
 export function sinDuplicados(lista) {
-  // Escribe tu código aquí
+  return [...new Set(lista)];
 }
 
 // -------------------------------------------------------------
@@ -96,9 +97,11 @@ export function sinDuplicados(lista) {
 // Pista: split → filter → join
 // -------------------------------------------------------------
 export function palabrasLargas(frase, minimo) {
-  // Escribe tu código aquí
+  return frase
+    .split(' ')
+    .filter((palabra) => palabra.length >= minimo)
+    .join(' ');
 }
-
 // =============================================================
 // Zona de pruebas: node modulos/05-arrays/ejercicios.js
 // =============================================================
