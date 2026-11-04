@@ -181,6 +181,7 @@ async function cargarProyectos() {
 // -------------------------------------------------------------
 function crearTarjetaProyecto(proyecto) {
   const tarjeta = document.createElement('article');
+  tarjeta.dataset.proyecto = String(proyecto.id);
   tarjeta.classList.add('tarjeta');
 
   if (proyecto.destacado) {
