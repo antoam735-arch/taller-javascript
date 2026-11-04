@@ -1,70 +1,35 @@
 [
   {
     "id": 1,
-    "titulo": "Lista de tareas",
-    "descripcion": "Añade, tacha y gestiona tareas desde el navegador.",
-    "detalle": "Mi primera aplicación con JavaScript: formulario, eventos y manipulación del DOM. La hice en el módulo 07 del taller.",
+    "titulo": "MISE",
+    "descripcion": "Aplicación en desarrollo para gestionar las operaciones de cocina de varios restaurantes.",
+    "detalle": "Proyecto con gestión de productos, inventario, recetas, proveedores y documentos. Incluye autenticación y separación de datos por organización. Algunas integraciones siguen pendientes o funcionan en modo de demostración.",
     "tecnologias": [
-      "HTML",
-      "CSS",
-      "JavaScript"
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Supabase",
+      "PostgreSQL",
+      "Tailwind CSS"
     ],
     "destacado": true,
     "demo": "",
-    "codigo": ""
+    "codigo": "https://github.com/antoam735-arch/mise"
   },
   {
     "id": 2,
-    "titulo": "Este portfolio",
-    "descripcion": "Web personal que carga los proyectos desde un JSON y permite filtrarlos.",
-    "detalle": "Construida desde una plantilla durante el taller de JavaScript: fetch, filtros, buscador, validación de formularios y modo oscuro.",
+    "titulo": "SOSEGO",
+    "descripcion": "Proyecto web de espacios equipados para profesionales de yoga, pilates y otras disciplinas de bienestar.",
+    "detalle": "Web con identidad visual propia, presentación de espacios, animaciones y formulario de solicitud. Las solicitudes quedan pendientes de validación. Las imágenes son conceptuales y no representan un centro abierto.",
     "tecnologias": [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "JSON"
+      "React",
+      "TypeScript",
+      "Vinext",
+      "Vite",
+      "Tailwind CSS",
+      "Cloudflare"
     ],
     "destacado": true,
-    "demo": "",
-    "codigo": ""
-  },
-  {
-    "id": 3,
-    "titulo": "Calculadora de propinas",
-    "descripcion": "Calcula cuánto paga cada persona al dividir la cuenta.",
-    "detalle": "Práctica de operadores, conversión de tipos y eventos input para recalcular en directo.",
-    "tecnologias": [
-      "HTML",
-      "JavaScript"
-    ],
-    "destacado": false,
-    "demo": "",
-    "codigo": ""
-  },
-  {
-    "id": 4,
-    "titulo": "Landing page de una cafetería",
-    "descripcion": "Página de presentación responsive con carta y mapa.",
-    "detalle": "Maquetación con Flexbox y Grid, adaptada a móvil.",
-    "tecnologias": [
-      "HTML",
-      "CSS"
-    ],
-    "destacado": false,
-    "demo": "",
-    "codigo": ""
-  },
-  {
-    "id": 5,
-    "titulo": "API de chistes",
-    "descripcion": "Pequeño servidor que devuelve un chiste aleatorio en JSON.",
-    "detalle": "Primer contacto con Node.js y con cómo funciona una API por dentro.",
-    "tecnologias": [
-      "Node",
-      "JavaScript",
-      "JSON"
-    ],
-    "destacado": false,
     "demo": "",
     "codigo": ""
   }
